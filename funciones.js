@@ -120,3 +120,109 @@
 // let compraTotal = registrarProductos(cantidadPro)
 // calcularIva(compraTotal)
 
+
+
+//PUNTO 8
+// let nombre
+// function pedirNombre() {
+//      nombre = prompt("digite su nombre ")
+// }
+// function imprimirNombre(){
+    
+//     document.write("bienvenvenid@ "+nombre)
+    
+// }
+// pedirNombre()
+// imprimirNombre()
+
+
+// PUNTO 2
+// function velocidad() {
+//     km = parseFloat(prompt("digite velocidad en kilometros"))
+//     return km
+// }
+// function transormarMetros(km) {
+//     return km * 1000
+// }
+// function transformarMillas(km) {
+//     return  km * 0.621371
+// }
+// function mostrarResultados(km) {
+//     let velocidadMetros = transormarMetros(km)
+//     let velocidadMillas = transformarMillas(km)
+//     document.write("velocidad en metros: "+velocidadMetros+"<br>")
+//     document.write("velocidad en millas: "+velocidadMillas)
+// }
+// let velocidadUsuario = velocidad()
+// mostrarResultados(velocidadUsuario)
+
+
+
+//PUNTO 3
+// function circunferencia(radio) {
+//     return 2*Math.PI*radio
+// }
+// function calcularCubo(numero) {
+//     return Math.pow(numero,3)
+// }
+// let radio = parseFloat(prompt("digite el radio del circulo"))
+// let resultadoCircunferencia = circunferencia(radio)
+// document.write("la circunferencia del circulo es: "+resultadoCircunferencia.toFixed(2)+"<br>")
+
+// let numero = parseFloat(prompt("introduce numero a calcular el cubo"))
+// let resultadoCubo = calcularCubo(numero)
+// document.write("el cubo de "+numero+" es: "+resultadoCubo)
+
+
+//PUNTO 4
+// function mostrarNombre(nombre) {
+//     // Verificar si el nombre es un número
+//     if (isNaN(nombre) && nombre !== "") {
+//         document.write("El nombre ingresado es: " + nombre);
+//     } else {
+//         document.write("Ingrese un nombre válido.");
+//     }
+// }
+
+// // Pedir el nombre al usuario
+// let nombreUsuario = prompt("Introduce tu nombre: ");
+// mostrarNombre(nombreUsuario);
+
+
+
+
+//PUNTO 5
+
+function mostrarOperaciones(n1, n2) {
+    let operaciones = prompt("Digite la operación a realizar: + - * /");
+    let resultado;
+
+    if (operaciones === "+") {
+        resultado = n1 + n2;
+    } else if (operaciones === "-") {
+        resultado = n1 - n2;
+    } else if (operaciones === "*") {
+        resultado = n1 * n2;
+    } else if (operaciones === "/") {
+        if (n2 === 0) {
+            alert("No se puede dividir entre 0");
+            return null; // Retornar null si hay error
+        } else {
+            resultado = n1 / n2;
+        }
+    } else {
+        alert("Operación no válida");
+        return null; // Retornar null si la operación no es válida
+    }
+
+    // Retornar tanto el resultado como la operación para mostrar más tarde
+    return { resultado, operaciones };
+}
+
+let n1 = Number(prompt("Digite número 1"));
+let n2 = Number(prompt("Digite número 2"));
+let resultadoObj = mostrarOperaciones(n1, n2);
+
+if (resultadoObj && resultadoObj.resultado !== null) {
+    document.write("El resultado de " + n1 + " " + resultadoObj.operaciones + " " + n2 + " es igual a " + resultadoObj.resultado);
+}
